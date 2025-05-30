@@ -32,40 +32,47 @@
 ## Persiapan
 ### 📁 Dataset & Fitur
 
-Dataset berisi data demografis, akademik, sosio-ekonomi, dan makroekonomi mahasiswa. Berikut ringkasan kategorinya:
+Dataset yang digunakan adalah `data.csv`. File ini berisi berbagai atribut mengenai siswa/students, seperti :
 
-### 🧍‍♂️ Informasi Demografis & Sosial-Ekonomi
-
-* `Marital_status`, `Nacionality`, `Gender`, `Age_at_enrollment`
-* `International`, `Displaced`, `Educational_special_needs`
-* `Mothers_qualification`, `Fathers_qualification`
-* `Mothers_occupation`, `Fathers_occupation`
-
-### 🎓 Informasi Akademik Awal
-
-* `Application_mode`, `Application_order`, `Course`
-* `Daytime_evening_attendance`, `Previous_qualification`
-* `Previous_qualification_grade`, `Admission_grade`
-
-### 💰 Informasi Finansial
-
-* `Debtor`, `Tuition_fees_up_to_date`, `Scholarship_holder`
-
-### 📚 Performa Akademik (Semester 1 & 2)
-
-* `Curricular_units_*_credited`, `enrolled`, `evaluations`, `approved`, `grade`, `without_evaluations`
-
-### 🌍 Kondisi Ekonomi Makro
-
-* `Unemployment_rate`, `Inflation_rate`, `GDP`
-
-### 🎯 Target / Label
-
-* `Status`:
-
-  * `Dropout` = keluar
-  * `Graduate` = lulus
-  * `Enrolled` = masih aktif
+| **Nama Kolom**                                        | **Definisi**                                                                                                                   |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| **Marital\_status**                                   | Status pernikahan mahasiswa (misalnya: 1 = Lajang, 2 = Menikah, dll).                                                          |
+| **Application\_mode**                                 | Cara atau jalur mahasiswa mendaftar (misalnya: online, jalur prestasi, reguler, dll — direpresentasikan sebagai kode numerik). |
+| **Application\_order**                                | Urutan pilihan program studi saat pendaftaran (misalnya: pilihan ke-1, ke-2, dst.).                                            |
+| **Course**                                            | ID program studi atau jurusan yang diambil mahasiswa.                                                                          |
+| **Daytime\_evening\_attendance**                      | Jenis kehadiran kuliah (1 = kelas pagi, 0 = kelas malam).                                                                      |
+| **Previous\_qualification**                           | Kualifikasi pendidikan terakhir sebelum masuk (misalnya: SMA, diploma, dll — dalam bentuk kode).                               |
+| **Previous\_qualification\_grade**                    | Nilai akhir dari kualifikasi sebelumnya (misalnya nilai ijazah SMA).                                                           |
+| **Nacionality**                                       | Kewarganegaraan mahasiswa (kode numerik).                                                                                      |
+| **Mothers\_qualification**                            | Kualifikasi pendidikan ibu mahasiswa (kode numerik).                                                                           |
+| **Fathers\_qualification**                            | Kualifikasi pendidikan ayah mahasiswa (kode numerik).                                                                          |
+| **Mothers\_occupation**                               | Pekerjaan ibu mahasiswa (kode numerik).                                                                                        |
+| **Fathers\_occupation**                               | Pekerjaan ayah mahasiswa (kode numerik).                                                                                       |
+| **Admission\_grade**                                  | Nilai akhir saat penerimaan mahasiswa.                                                                                         |
+| **Displaced**                                         | Apakah mahasiswa berasal dari wilayah konflik/pengungsi (1 = ya, 0 = tidak).                                                   |
+| **Educational\_special\_needs**                       | Apakah mahasiswa memiliki kebutuhan khusus dalam pendidikan (1 = ya, 0 = tidak).                                               |
+| **Debtor**                                            | Apakah mahasiswa memiliki tunggakan pembayaran (1 = ya, 0 = tidak).                                                            |
+| **Tuition\_fees\_up\_to\_date**                       | Apakah pembayaran SPP/biaya kuliah mahasiswa sudah diperbarui (1 = ya, 0 = tidak).                                             |
+| **Gender**                                            | Jenis kelamin mahasiswa (1 = perempuan, 0 = laki-laki, atau sebaliknya tergantung dokumentasi).                                |
+| **Scholarship\_holder**                               | Apakah mahasiswa menerima beasiswa (1 = ya, 0 = tidak).                                                                        |
+| **Age\_at\_enrollment**                               | Usia mahasiswa saat pertama kali mendaftar.                                                                                    |
+| **International**                                     | Apakah mahasiswa berasal dari luar negeri (1 = ya, 0 = tidak).                                                                 |
+| **Curricular\_units\_1st\_sem\_credited**             | Jumlah mata kuliah semester 1 yang diakui kreditnya (misalnya karena transfer dari institusi lain).                            |
+| **Curricular\_units\_1st\_sem\_enrolled**             | Jumlah mata kuliah semester 1 yang diambil.                                                                                    |
+| **Curricular\_units\_1st\_sem\_evaluations**          | Jumlah mata kuliah semester 1 yang diikuti ujian/penilaiannya.                                                                 |
+| **Curricular\_units\_1st\_sem\_approved**             | Jumlah mata kuliah semester 1 yang lulus.                                                                                      |
+| **Curricular\_units\_1st\_sem\_grade**                | Rata-rata nilai dari semua mata kuliah semester 1.                                                                             |
+| **Curricular\_units\_1st\_sem\_without\_evaluations** | Jumlah mata kuliah semester 1 yang tidak dinilai (mungkin tidak ikut ujian).                                                   |
+| **Curricular\_units\_2nd\_sem\_credited**             | Jumlah mata kuliah semester 2 yang diakui kreditnya.                                                                           |
+| **Curricular\_units\_2nd\_sem\_enrolled**             | Jumlah mata kuliah semester 2 yang diambil.                                                                                    |
+| **Curricular\_units\_2nd\_sem\_evaluations**          | Jumlah mata kuliah semester 2 yang diikuti ujian/penilaiannya.                                                                 |
+| **Curricular\_units\_2nd\_sem\_approved**             | Jumlah mata kuliah semester 2 yang lulus.                                                                                      |
+| **Curricular\_units\_2nd\_sem\_grade**                | Rata-rata nilai dari semua mata kuliah semester 2.                                                                             |
+| **Curricular\_units\_2nd\_sem\_without\_evaluations** | Jumlah mata kuliah semester 2 yang tidak dinilai.                                                                              |
+| **Unemployment\_rate**                                | Tingkat pengangguran pada saat itu (dalam persentase, bisa jadi dari data eksternal).                                          |
+| **Inflation\_rate**                                   | Tingkat inflasi saat itu (persentase, bisa jadi dari data eksternal).                                                          |
+| **GDP**                                               | Produk Domestik Bruto (dalam satuan tertentu, biasanya log GDP atau GDP per kapita).                                           |
+| **Status**                                            | Status akhir mahasiswa: **Graduate** (lulus), **Enrolled** (masih aktif), atau **Dropout** (putus studi).                      |
 
 ---
 
