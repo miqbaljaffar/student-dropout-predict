@@ -139,7 +139,7 @@ Informasi ini sangat **krusial** bagi manajemen Jaya Jaya Institut untuk:
 
 Dashboard Metabase dijalankan secara lokal. Untuk mengaksesnya, pastikan instance Metabase sudah berjalan di komputer Anda.
 
-* **URL Metabase (Lokal):** http://localhost:3000/public/dashboard/61371a65-1b33-4783-a161-5bfd0e1e7a14
+* **URL Metabase (Lokal):** http://localhost:3000/public/dashboard/81e22187-2c74-41da-b4e7-40e54e09b542
 * **Username:** iqbaljaffar1108@gmail.com
 * **Password:** metabase1108
  
