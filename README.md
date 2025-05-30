@@ -1,5 +1,9 @@
 # 🎓 Proyek Akhir: Menyelesaikan Permasalahan Dropout di Jaya Jaya Institut (Edutech)
 
+* Nama: Mohammad Iqbal Jaffar
+* Email: iqbaljaffar1108@gmail.com
+* Id Dicoding: miqbalj
+
 ## 🧠 Business Understanding
 
 **Jaya Jaya Institut** merupakan institusi pendidikan tinggi yang berdiri sejak tahun 2000 dan telah mencetak banyak lulusan berprestasi. Namun, institusi ini menghadapi tantangan serius berupa **tingginya angka mahasiswa yang tidak menyelesaikan studi (dropout)**.
@@ -67,13 +71,17 @@ Dataset berisi data demografis, akademik, sosio-ekonomi, dan makroekonomi mahasi
 ## ⚙️ Setup Environment
 
 Proyek ini dibangun menggunakan **Python**, dengan library utama seperti:
-
+1.  Pembuatan *virtual environment* Python untuk isolasi dependensi proyek.
+2.  Instalasi pustaka `sqlalchemy` (meskipun tidak secara eksplisit digunakan dalam *script* analisis utama, ini dicatat sebagai bagian dari persiapan awal lingkungan yang mungkin diperlukan untuk interaksi database di skenario lain).
+3.  import library seperti : 
 * `pandas`, `numpy`, `matplotlib`, `seaborn`
 * `scikit-learn`, `joblib`, `streamlit`
 
 ---
 
 ## 📊 Business Dashboard
+
+![dashboard](https://raw.githubusercontent.com/miqbaljaffar/student-dropout-predict/main/miqbalj-dashboard.jpg)
 
 Dashboard ini menyajikan visualisasi utama terkait dropout, seperti:
 
@@ -83,7 +91,60 @@ Dashboard ini menyajikan visualisasi utama terkait dropout, seperti:
 * **Rata-Rata SKS Diambil vs. SKS Lulus (Semester 1)**
 * **Dropout berdasarkan Status Pembayaran Uang Kuliah**
 
-> 📌 Catatan: Saat ini, dashboard divisualisasikan dalam bentuk analisis dan output statis (PDF). Untuk implementasi nyata, dapat digunakan tools seperti **Tableau**, **Power BI**, atau **Streamlit**.
+
+### Ringkasan Temuan dari Business Dashboard
+
+Secara keseluruhan, dashboard ini menyajikan gambaran komprehensif mengenai situasi mahasiswa di **Jaya Jaya Institut**, dengan fokus utama pada **identifikasi faktor-faktor yang berkontribusi terhadap angka dropout**.
+
+Beberapa temuan utama:
+
+* **Jumlah Mahasiswa Aktif:** 4.424 mahasiswa
+* **Tingkat Dropout:** 32,12%
+* **Tingkat Kelulusan:** 49,93%
+* **Status Masih Terdaftar:** 17,9%
+
+#### Temuan Utama:
+
+1. **Nilai Masuk dan Dropout**
+
+   * Mahasiswa dengan **nilai masuk di bawah 100** menunjukkan tingkat dropout tertinggi.
+   * Hampir **50% dari 794 mahasiswa** dalam kelompok ini tidak menyelesaikan pendidikan mereka.
+
+2. **Kinerja Akademik Awal**
+
+   * Mahasiswa yang dropout rata-rata:
+
+     * Mengambil lebih sedikit SKS.
+     * Lulus lebih sedikit mata kuliah di semester pertama.
+   * Ini menunjukkan bahwa performa akademik awal sangat berkorelasi dengan status akhir mahasiswa.
+
+3. **Faktor Finansial**
+
+   * Mahasiswa yang **tidak membayar uang kuliah tepat waktu** memiliki tingkat dropout hingga **80%**.
+   * Sebaliknya, mereka yang membayar tepat waktu memiliki kecenderungan dropout yang jauh lebih rendah.
+
+---
+
+### Implikasi
+
+Informasi ini sangat **krusial** bagi manajemen Jaya Jaya Institut untuk:
+
+* Melakukan **intervensi dini**,
+* Memberikan **bimbingan dan dukungan khusus**, serta
+* Merancang **strategi pencegahan dropout** berbasis data dan risiko yang telah teridentifikasi.
+
+---
+
+## Kredensial Metabase
+
+Dashboard Metabase dijalankan secara lokal. Untuk mengaksesnya, pastikan instance Metabase sudah berjalan di komputer Anda.
+
+* **URL Metabase (Lokal):** http://localhost:3000/public/dashboard/61371a65-1b33-4783-a161-5bfd0e1e7a14
+* **Username:** iqbaljaffar1108@gmail.com
+* **Password:** metabase1108
+ 
+**Catatan Penting untuk Penilai:**
+Karena Metabase dijalankan secara lokal, URL di atas hanya akan berfungsi jika Anda menjalankan instance Metabase ini di mesin Anda sendiri dengan data yang sama. Jika diperlukan cara lain untuk mendemonstrasikan dashboard (misalnya melalui screenshot, video, atau jika saya perlu men-deploy-nya ke environment yang bisa diakses publik), mohon informasikan.
 
 ---
 
